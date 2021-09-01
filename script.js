@@ -1,53 +1,24 @@
-function bass(){
-    var audio=new Audio("./sounds/kick-bass.mp3");
+function playSound(name){
+    var audio = new Audio("./sounds/" + name + ".mp3");
     audio.play();
 }
 
-function snare(){
-    var audio=new Audio("./sounds/snare.mp3");
-    audio.play();
-}
-
-function crash(){
-    var audio=new Audio("./sounds/crash.mp3");
-    audio.play();
-}
-
-function tom1(){
-    var audio=new Audio("./sounds/tom-1.mp3");
-    audio.play();
-}
-
-function tom2(){
-    var audio=new Audio("./sounds/tom-2.mp3");
-    audio.play();
-}
-
-function tom3(){
-    var audio=new Audio("./sounds/tom-3.mp3");
-    audio.play();
-}
-
-function tom4(){
-    var audio=new Audio("./sounds/tom-4.mp3");
-    audio.play();
-}
 
 document.addEventListener("keydown",function(event){
     switch(event.key){
-        case 'w':bass()
+        case 'w': playSound('kick-bass')
                     break;
-        case 'a':tom1()
+        case 'a': playSound('tom-1')
                     break;
-        case 's':tom2()
+        case 's': playSound('tom-2')
                     break;
-        case 'd':tom3()
+        case 'd': playSound('tom-3')
                     break;
-        case 'j':tom4()
+        case 'j': playSound('tom-4')
                     break;
-        case 'k':snare()
+        case 'k': playSound('snare')
                     break
-        case 'l': crash()
+        case 'l': playSound('crash')
     }
 
     document.querySelector("."+event.key).classList.add("pressed")
